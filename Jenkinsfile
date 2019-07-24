@@ -1,13 +1,10 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven 3.3.9' 
-        jdk 'jdk8' 
-    }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                def mvn = tool 'Maven 3.3.9'
+                sh '${mvn}\\bin\\mvn clean install'
             }
         }
         stage('Test') {
