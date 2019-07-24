@@ -1,12 +1,12 @@
 pipeline {
-    def mvn = tool 'Maven 3.3.9'
     agent any
     stages {
         stage('Build') {
             steps {
-                step {
+                script {
+                   def mvn = tool 'Maven 3.3.9'
+                }    
                 sh '${mvn}\\bin\\mvn clean install'
-                }
             }
         }
         stage('Test') {
