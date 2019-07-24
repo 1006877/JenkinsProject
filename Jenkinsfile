@@ -3,11 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
                    def mvnHome = tool 'Maven 3.3.9'
                    sh "'${mvnHome}/bin/mvn' clean package"
-                }    
-              
             }
         }
         stage('Test') {
