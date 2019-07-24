@@ -6,7 +6,7 @@ pipeline {
                 script {
                    def mvn = tool 'Maven 3.3.9'
                 }    
-                sh '${mvn} clean install'
+                sh '${mvn}/bin/mvn clean install'
             }
         }
         stage('Test') {
