@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                   def mvn = tool 'Maven 3.3.9'
+                   def mvnHome = tool 'Maven 3.3.9'
                 }    
-                echo "M2_HOME = ${mvn}"
+               sh "'${mvnHome}/bin/mvn' clean package"
             }
         }
         stage('Test') {
