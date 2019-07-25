@@ -23,7 +23,7 @@ pipeline {
            steps {
                 script {
                    def dockerHome = tool 'docker'
-                   sh "${dockerHome} version"
+                   sh "'${dockerHome}' version"
                 }    
 
             }
