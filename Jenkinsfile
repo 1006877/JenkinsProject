@@ -24,6 +24,7 @@ pipeline {
                 script {
                    def dockerHome = tool 'docker'
                    sh "'${dockerHome}' version"
+                   sh "'${dockerHome}' build -t jenkins-demo:${BUILD_NUMBER} ."
                 }    
 
             }
